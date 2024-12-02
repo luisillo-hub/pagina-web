@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relajante Muscular - Droguería XYZ</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="comprar.js"></script>
+</head>
+<body>
+<header>
+    <nav>
+        <h1>Droguería</h1>
+        <ul>
+            <li><a href="main.html">Inicio</a></li>
+            <li><a href="drogueria.html">Droguería</a></li>
+            <li><a href="belleza.html">Belleza</a></li>
+            <li><a href="cuidado-personal.html">Cuidado Personal</a></li>
+            <li><a href="contactanos.html">Contáctanos</a></li>
+            <li><a href="carrito.html">Carrito</a></li>
+            <li><a href="registrarse.html">Registrarse</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+<section class="productos">
+    <div class="productos">
+        <img src="relajante-muscular.png" alt="Relajante Muscular" height="300px" />
+        <div class="product-container">
+            <h3>Relajante Muscular</h3>
+            <p>Relajante muscular para aliviar la tensión y el dolor muscular.</p>
+            <p>Precio: $14.00</p>
+            <label for="amount">Cantidad:</label>
+            <input type="number" id="amount" name="amount" min="1" max="100" value="1"> <br>
+            <button class="comprar-button" onclick="addToCart('Relajante Muscular', 14.00)">Comprar</button>
+        </div>
+        <div class="producto">
+            <p>Descubre nuestro Relajante Muscular de acción rápida, formulado especialmente para aliviar la tensión y el malestar muscular. Ideal para aquellos que sufren de dolores musculares, espasmos o rigidez, este producto te ayudará a recuperar la movilidad y bienestar en tu día a día.
+                <br> Alivio Efectivo: Diseñado para relajar los músculos tensos y aliviar el dolor asociado con espasmos musculares, proporcionando un efecto calmante y relajante.
+
+                <br> Fórmula Avanzada: Contiene ingredientes activos que actúan en el sistema nervioso central, ayudando a reducir la actividad muscular excesiva y promoviendo una sensación de bienestar.
+            </p>
+
+            <h2>Productos Similares</h2>
+        </div>
+        <div class="product-container">
+            <a href="paracetamol.html">
+                <img src="paracetamol.png" alt="Paracetamol" class="product-image" />
+            </a>
+            <h3>Paracetamol</h3>
+            <p>Precio: $10.00</p>
+        </div>
+        <div class="product-container">
+            <a href="ibuprofeno.html">
+                <img src="ibuprofeno.jpg" alt="Ibuprofeno" class="product-image" />
+            </a>
+            <h3>Ibuprofeno</h3>
+            <p>Precio: $12.00</p>
+        </div>
+        <div class="product-container">
+            <a href="vaselina.html">
+                <img src="vaselina.jpg" alt="Vaselina" class="product-image" />
+            </a>
+            <h3>Vaselina</h3>
+            <p>Precio: $5.00</p>
+        </div>
+        <div class="product-container">
+            <a href="toallitas-humedas.html">
+                <img src="toallitas-humedas.jpg" alt="Toallitas Húmedas" class="product-image" />
+            </a>
+            <h3>Toallitas Húmedas</h3>
+            <p>Precio: $7.00</p>
+        </div>
+    </div>
+</section>
+</main>
+<footer>
+    <p>&copy; 2024 Droguería XYZ. Todos los derechos reservados.</p>
+    <p>Contacto: info@farmacia.com</p>
+    <p>Teléfono: 123-456-7890</p>
+</footer>
+</body>
+</html>

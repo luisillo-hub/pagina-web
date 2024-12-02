@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toallitas Húmedas - Droguería XYZ</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="comprar.js"></script>
+</head>
+<body>
+<header>
+    <nav>
+        <h1>Droguería</h1>
+        <ul>
+            <li><a href="main.html">Inicio</a></li>
+            <li><a href="drogueria.html">Droguería</a></li>
+            <li><a href="belleza.html">Belleza</a></li>
+            <li><a href="cuidado-personal.html">Cuidado Personal</a></li>
+            <li><a href="contactanos.html">Contáctanos</a></li>
+            <li><a href="carrito.html">Carrito</a></li>
+            <li><a href="registrarse.html">Registrarse</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+<section class="productos">
+    <div class="productos">
+        <img src="toallitas-humedas.jpg" alt="Toallitas Húmedas" height="300px" />
+        <div class="product-container">
+            <h3>Toallitas Húmedas</h3>
+            <p>Las toallitas húmedas son ideales para la limpieza y cuidado de la piel.</p>
+            <p>Precio: $3.00</p>
+            <label for="amount">Cantidad:</label>
+            <input type="number" id="amount" name="amount" min="1" max="100" value="1"> <br>
+            <button class="comprar-button" onclick="addToCart('Toallitas Húmedas', 3.00)">Comprar</button>
+        </div>
+        <div class="producto">
+            <p>Descubre nuestras Toallitas Húmedas, la solución perfecta para mantenerte fresco y limpio en cualquier momento y lugar. Diseñadas para ofrecer comodidad y eficacia, estas toallitas son ideales para el cuidado personal, la higiene de bebés y la limpieza rápida de superficies.
+                Abre el paquete y saca una toallita. Limpia suavemente la zona deseada y desecha la toallita en el basurero después de usar.
+
+                No se recomienda tirar las toallitas por el inodoro para evitar obstrucciones.
+            </p>
+
+            <h2>Productos Similares</h2>
+        </div>
+        <div class="product-container">
+            <a href="paracetamol.html">
+                <img src="paracetamol.png" alt="Paracetamol" class="product-image" />
+            </a>
+            <h3>Paracetamol</h3>
+            <p>Precio: $10.00</p>
+        </div>
+        <div class="product-container">
+            <a href="ibuprofeno.html">
+                <img src="ibuprofeno.jpg" alt="Ibuprofeno" class="product-image" />
+            </a>
+            <h3>Ibuprofeno</h3>
+            <p>Precio: $12.00</p>
+        </div>
+        <div class="product-container">
+            <a href="gel-antibacterial.html">
+                <img src="gel-antibacterial.jpg" alt="Gel Antibacterial" class="product-image" />
+            </a>
+            <h3>Gel Antibacterial</h3>
+            <p>Precio: $5.00</p>
+        </div>
+        <div class="product-container">
+            <a href="desodorante.html">
+                <img src="desodorante.jpg" alt="Desodorante" class="product-image" />
+            </a>
+            <h3>Desodorante</h3>
+            <p>Precio: $8.00</p>
+        </div>
+    </div>
+</section>
+</main>
+<footer>
+    <p>&copy; 2024 Droguería XYZ. Todos los derechos reservados.</p>
+    <p>Contacto: info@farmacia.com</p>
+    <p>Teléfono: 123-456-7890</p>
+</footer>
+</body>
+</html>

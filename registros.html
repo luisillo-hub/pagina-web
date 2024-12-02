@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros - Droguería XYZ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <nav>
+        <h1>Registros</h1>
+        <ul>
+            <li><a href="main.html">Inicio</a></li>
+            <li><a href="drogueria.html">Droguería</a></li>
+            <li><a href="belleza.html">Belleza</a></li>
+            <li><a href="cuidado-personal.html">Cuidado Personal</a></li>
+            <li><a href="contactanos.html">Contáctanos</a></li>
+            <li><a href="carrito.html">Carrito</a></li>
+            <li><a href="registrarse.html">Registrarse</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h2>Usuarios Registrados</h2>
+    <ul id="userList"></ul>
+    <button id="limpiar-button" onclick="borrarRegistros()">Borrar Registros</button>
+    <script>
+        function displayUsers() {
+            const usersData = JSON.parse(localStorage.getItem('userData')) || [];
+            
+            const userList = document.getElementById('userList');
+            userList.innerHTML = '';
+            if (usersData.length > 0) {
+                usersData.forEach(user => {
+                    const li = document.createElement('li');
+                    li.textContent = `Nombre: ${user.nombre}, Email: ${user.email}, Teléfono: ${user.telefono}, Dirección: ${user.direccion}, Contraseña: ${user.password}`;
+                    userList.appendChild(li);
+                });
+            } else {
+                userList.innerHTML = '<li>No hay usuarios registrados.</li>';
+            }
+        }
+        
+        function borrarRegistros() {
+            localStorage.removeItem('userData'); // Clear user data from local storage
+            displayUsers(); // Refresh the user list to show no records
+        }
+        
+        window.onload = displayUsers;
+    </script>
+</main>
+<footer>
+    <p>&copy; 2024 Droguería XYZ. Todos los derechos reservados.</p>
+    <p>Contacto: info@farmacia.com</p>
+    <p>Teléfono: 123-456-7890</p>
+</footer>
+</body>
+</html>

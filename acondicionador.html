@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Acondicionador</title>
+    <script src="comprar.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Cuidado Personal</h1>
+            <ul>
+                <li><a href="main.html">Inicio</a></li>
+                <li><a href="drogueria.html">Droguería</a></li>
+                <li><a href="belleza.html">Belleza</a></li>
+                <li><a href="cuidado-personal.html">Cuidado Personal</a></li>
+                <li><a href="contactanos.html">Contáctanos</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+                <li><a href="registrarse.html">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+   
+<section class="productos">
+    <div class="productos">
+        <img src="acondicionador.jpg" alt="Acondicionador" height="300px" />
+        <div class="product-container">
+            <h3>Acondicionador</h3>
+            <p>Acondicionador que nutre y suaviza el cabello</p>
+            <p>Precio: $6.00</p>
+            <label for="amount">Cantidad:</label>
+            <input type="number" id="amount" name="amount" min="1" max="100" value="1"> <br>
+            <button class="comprar-button" onclick="addToCart('Acondicionador', 6.00)">Comprar</button>
+        </div>
+        <div class="producto">
+            <p>Acondicionador que nutre y suaviza el cabello, dejándolo manejable y brillante. Este producto está formulado con ingredientes que ayudan a desenredar el cabello y a prevenir el daño. Aplícalo después del shampoo, distribuyéndolo uniformemente por el cabello húmedo, y déjalo actuar durante 2-3 minutos antes de enjuagar. Es adecuado para todo tipo de cabello y puede usarse diariamente.</p>
+
+            <h2>Productos Similares</h2>
+        </div>
+        
+        <div class="product-container">
+            <a href="crema-para-peinar.html">
+                <img src="crema-para-peinar.jpg" alt="Crema para Peinar" class="product-image" />
+            </a>
+            <h3>Crema para Peinar</h3>
+            <p>Precio: $5.00</p>
+        </div>
+        <div class="product-container">
+            <a href="cuchillas.html">
+                <img src="cuchillas.jpg" alt="Cuchillas de Afeitar" class="product-image" />
+            </a>
+            <h3>Cuchillas de Afeitar</h3>
+            <p>Precio: $8.00</p>
+        </div>
+        <div class="product-container">
+            <a href="enjuague-bucal.html">
+                <img src="enjuague-bucal.jpg" alt="Enjuague Bucal" class="product-image" />
+            </a>
+            <h3>Enjuague Bucal</h3>
+            <p>Precio: $4.00</p>
+        </div>
+        <div class="product-container">
+            <a href="shampoo.html">
+                <img src="shampoo.jpg" alt="Shampoo" class="product-image" />
+            </a>
+            <h3>Shampoo</h3>
+            <p>Precio: $10.00</p>
+        </div>
+    </div>
+</section>
+    
+    <footer>
+        <p>&copy; 2024 Droguería XYZ. Todos los derechos reservados.</p>
+        <p>Contacto: info@farmacia.com</p>
+        <p>Teléfono: 123-456-7890</p>
+    </footer>
+</body>
+</html>

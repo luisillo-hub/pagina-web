@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaselina - Droguería XYZ</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="comprar.js"></script>
+</head>
+<body>
+<header>
+    <nav>
+        <h1>Droguería</h1>
+        <ul>
+            <li><a href="main.html">Inicio</a></li>
+            <li><a href="drogueria.html">Droguería</a></li>
+            <li><a href="belleza.html">Belleza</a></li>
+            <li><a href="cuidado-personal.html">Cuidado Personal</a></li>
+            <li><a href="contactanos.html">Contáctanos</a></li>
+            <li><a href="carrito.html">Carrito</a></li>
+            <li><a href="registrarse.html">Registrarse</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+<section class="productos">
+    <div class="productos">
+        <img src="vaselina.jpg" alt="Vaselina" height="300px" />
+        <div class="product-container">
+            <h3>Vaselina</h3>
+            <p>La vaselina es un producto utilizado para hidratar y proteger la piel.</p>
+            <p>Precio: $5.00</p>
+            <label for="amount">Cantidad:</label>
+            <input type="number" id="amount" name="amount" min="1" max="100" value="1"> <br>
+            <button class="comprar-button" onclick="addToCart('Vaselina', 5.00)">Comprar</button>
+        </div>
+        <div class="producto">
+<p>Descubre nuestra Vaselina de alta calidad, un producto versátil y esencial para el cuidado de la piel. Conocida por sus propiedades hidratantes y protectoras, la vaselina es ideal para tratar una variedad de problemas cutáneos y mantener la piel suave y saludable.
+   <br> Hidratación Profunda: Actúa como un emoliente que sella la humedad en la piel, ayudando a prevenir la sequedad y manteniendo la piel hidratada por más tiempo.
+<br>
+Protección de la Piel: Crea una barrera protectora sobre la piel, lo que la hace ideal para proteger áreas expuestas a irritantes, como el viento y el frío.
+</p>
+            <h2>Productos Similares</h2>
+        </div>
+        <div class="product-container">
+            <a href="paracetamol.html">
+                <img src="paracetamol.png" alt="Paracetamol" class="product-image" />
+            </a>
+            <h3>Paracetamol</h3>
+            <p>Precio: $10.00</p>
+        </div>
+        <div class="product-container">
+            <a href="ibuprofeno.html">
+                <img src="ibuprofeno.jpg" alt="Ibuprofeno" class="product-image" />
+            </a>
+            <h3>Ibuprofeno</h3>
+            <p>Precio: $12.00</p>
+        </div>
+        <div class="product-container">
+            <a href="relajante-muscular.html">
+                <img src="relajante-muscular.png" alt="Relajante Muscular" class="product-image" />
+            </a>
+            <h3>Relajante Muscular</h3>
+            <p>Precio: $15.00</p>
+        </div>
+        <div class="product-container">
+            <a href="crema-solar.html">
+                <img src="crema-solar.jpg" alt="Crema Solar" class="product-image" />
+            </a>
+            <h3>Crema Solar</h3>
+            <p>Precio: $18.00</p>
+        </div>
+    </div>
+</section>
+</main>
+<footer>
+    <p>&copy; 2024 Droguería XYZ. Todos los derechos reservados.</p>
+    <p>Contacto: info@farmacia.com</p>
+    <p>Teléfono: 123-456-7890</p>
+</footer>
+</body>
+</html>
