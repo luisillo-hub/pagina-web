@@ -9,20 +9,14 @@
     <script src="comprar.js"></script>
 </head>
 
-<body>
+<body onload="mostrarMenu()">
+    
     <header>
-        <nav>
-            <h1>Cuidado Personal</h1>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="drogueria.html">Droguería</a></li>
-                <li><a href="belleza.html">Belleza</a></li>
-                <li><a href="cuidado-personal.html">Cuidado Personal</a></li>
-                <li><a href="contactanos.html">Contáctanos</a></li>
-                <li><a href="carrito.html">Carrito</a></li>
-                <li><a href="registrarse.html">Registrarse</a></li>
-            </ul>
-        </nav>
+          
+            <div id="menuContainer">
+                <!-- <script>mostrarMenu()</script> -->
+                 
+            </div>
     </header>
     <main>
         <main>
@@ -32,12 +26,16 @@
                     <div class="product-container">
                         <h3>Desodorante</h3>
                         <p>Desodorante de larga duración...</p>
-                        <p>Precio: $10.00</p>
+                        <p id="discounted-price"></p>
+                        <p id="original-price">Precio con descuento: $10.00</p>
+                        <script>
+                            showDiscountedPrice()
+                        </script>
                         <label for="amount">Cantidad:</label>
                         <input type="number" id="amount" name="amount" min="1" max="100" value="1"> <br>
                         <button class="comprar-button" onclick="addToCart('Desodorante', 10.00)">Comprar</button>
                     </div>
-                    <div class="producto">
+                    <div class="productos">
                         <p>Desodorante de larga duración para mantenerte fresco. Este producto está formulado para
                             combatir el mal olor y proporcionar una sensación de frescura durante todo el día. Aplícalo
                             sobre la piel limpia y seca, preferiblemente después de la ducha. Es adecuado para uso
@@ -45,38 +43,12 @@
                             <h2>Productos Similares</h2>
                     </div>
                    
-                    <div class="product-container">
-                        <a href="cuchillas.html">
-                            <img src="cuchillas.jpg" alt="Cuchillas de Afeitar" class="product-image" />
-                            </a>
-                   <h3>Cuchillas de Afeitar</h3>
-                    <p>Precio: $8.00</p>
-                    </div>
-                
-        <div class="product-container">
-            <a href="enjuague-bucal.html">
-                <img src="enjuague-bucal.jpg" alt="Enjuague Bucal" class="product-image" />
-            </a>
-            <h3>Enjuague Bucal</h3>
-            <p>Precio: $4.00</p>
-        </div>
-    
-        <div class="product-container">
-            <a href="shampoo.html">
-                <img src="shampoo.jpg" alt="Shampoo" class="product-image" />
-            </a>
-            <h3>Shampoo</h3>
-            <p>Precio: $10.00</p>
-        </div>
-
-        <div class="product-container">
-            <a href="acondicionador.html">
-                <img src="acondicionador.jpg" alt="Acondicionador" class="product-image" />
-            </a>
-            <h3>Acondicionador</h3>
-            <p>Precio: $6.00</p>
-        </div>
-
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    displayRandomSimilarProducts();
+                });
+            </script>
+        <div class="producto"></div>
         </main>
         <footer>
             <p>&copy; 2024 Droguería XYZ. Todos los derechos reservados.</p>

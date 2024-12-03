@@ -1,101 +1,114 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito - Droguería XYZ</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="comprar.js"></script>
 </head>
-<body>
-<header>
-    <nav>
-        <h1>Carrito de Compras</h1>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="drogueria.html">Droguería</a></li>
-            <li><a href="belleza.html">Belleza</a></li>
-            <li><a href="cuidado-personal.html">Cuidado Personal</a></li>
-            <li><a href="contactanos.html">Contáctanos</a></li>
-            <li><a href="carrito.html">Carrito</a></li>
-            <li><a href="registrarse.html">Registrarse</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <section class="carrito">
-        <h2>Productos en tu Carrito</h2>
-        <div id="product-list"></div>
-       
-        <h2 id="total">Total a Pagar: $0.00</h2> <!-- Total display -->
-        <button id="limpiar-button">Limpiar Carrito</button>
-    </section>
-</main>
-<footer>
-    <p>&copy; 2024 Droguería XYZ. Todos los derechos reservados.</p>
-    <p>Contacto: info@farmacia.com</p>
-    <p>Teléfono: 123-456-7890</p>
-</footer>
-<script>
-    const productList = document.getElementById('product-list');
-    const totalDisplay = document.getElementById('total'); // Total display element
-    const selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];    
-    const productImages = {
-        'Crema Hidratante': 'crema-hidratante.jpg',
-        'Serum Facial': 'serum-facial.png',
-        'Jabón Exfoliante': 'jabon-exfoliante.webp',
-        'Paracetamol': 'paracetamol.png',
-        'Ibuprofeno': 'ibuprofeno.jpg',
-        'Antibiótico': 'antibiotico.webp',
-        'Mascarilla Hidratante': 'mascarilla-hidratante.webp',
-        'Exfoliante Facial': 'exfoliante-facial.webp',
-        'Crema Anti-edad': 'crema-antiedad.avif',
-        'Relajante Muscular': 'relajante-muscular.png',
-        'Shampoo': 'shampoo.jpg',
-        'Cuchillas de Afeitar': 'cuchillas.jpg',
-        'Desodorante': 'desodorante.jpg',
-        'Base de Maquillaje': 'base-maquillaje.jpg',
-        'Labial Hidratante': 'labial-hidratante.jpg',
-        'Gel Antibacterial': 'gel-antibacterial.jpg',
-        'Crema Solar': 'crema-solar.jpg',
-        'Vaselina': 'vaselina.jpg',
-        'Toallitas Húmedas': 'toallitas-humedas.jpg',
-        'Acondicionador': 'acondicionador.jpg',
-        'Crema para Peinar': 'crema-para-peinar.jpg',
-        'Enjuague Bucal': 'enjuague-bucal.jpg',
-        'Cepillo de Dientes': 'cepillo-dientes.jpg'
-    };
 
-    // Button to clear the cart
-    const clearCartButton = document.getElementById('limpiar-button');
-    
-    clearCartButton.addEventListener('click', function() {
-        localStorage.removeItem('selectedProducts');
-        productList.innerHTML = '<p>No has agregado productos a tu carrito.</p>';
-        totalDisplay.innerHTML = 'Total a Pagar: $0.00'; // Reset total
-    });
+<body onload="mostrarMenu()">
+    <header>
 
-    function calculateTotal() {
-        let total = 0;
-        selectedProducts.forEach(product => {
-            total += product.price * product.quantity; // Calculate total
+        <div id="menuContainer">
+            <!-- <script>mostrarMenu()</script> -->
+        </div>
+    </header>
+    <main>
+        <section class="carrito">
+            <h2>Productos en tu Carrito</h2>
+            <div id="product-list"></div>
+
+            <h2 id="total">Total a Pagar: $0.00</h2> <!-- Total display -->
+            <button id="limpiar-button">Limpiar Carrito</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Droguería XYZ. Todos los derechos reservados.</p>
+        <p>Contacto: info@farmacia.com</p>
+        <p>Teléfono: 123-456-7890</p>
+    </footer>
+    <script>
+        const productList = document.getElementById('product-list');
+        const totalDisplay = document.getElementById('total'); // Total display element
+        const selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
+        const productImages = {
+            'Crema Hidratante': 'crema-hidratante.jpg',
+            'Serum Facial': 'serum-facial.png',
+            'Jabón Exfoliante': 'jabon-exfoliante.webp',
+            'Paracetamol': 'paracetamol.png',
+            'Ibuprofeno': 'ibuprofeno.jpg',
+            'Antibiótico': 'antibiotico.webp',
+            'Mascarilla Hidratante': 'mascarilla-hidratante.webp',
+            'Exfoliante Facial': 'exfoliante-facial.webp',
+            'Crema Anti-edad': 'crema-antiedad.avif',
+            'Relajante Muscular': 'relajante-muscular.png',
+            'Shampoo': 'shampoo.jpg',
+            'Cuchillas de Afeitar': 'cuchillas.jpg',
+            'Desodorante': 'desodorante.jpg',
+            'Base de Maquillaje': 'base-maquillaje.jpg',
+            'Labial Hidratante': 'labial-hidratante.jpg',
+            'Gel Antibacterial': 'gel-antibacterial.jpg',
+            'Crema Solar': 'crema-solar.jpg',
+            'Vaselina': 'vaselina.jpg',
+            'Toallitas Húmedas': 'toallitas-humedas.jpg',
+            'Acondicionador': 'acondicionador.jpg',
+            'Crema para Peinar': 'crema-para-peinar.jpg',
+            'Enjuague Bucal': 'enjuague-bucal.jpg',
+            'Cepillo de Dientes': 'cepillo-dientes.jpg',
+            'Leche en Polvo': 'leche-en-polvo.jpg',
+            'Chupete': 'chupete.jpg',
+            'Biberón': 'biberon.jpg',
+            'Agua Mineral': 'agua-mineral.jpg',
+            'Pañales': 'panales.jpg',
+            'Refresco': 'refresco.webp',
+            'Vino Tinto': 'vino-tinto.jpg',
+            'Limonada': 'limonada.jpg',
+            'Margarita': 'margarita.jpg',
+            'Daiquiri': 'daiquiri.jpg',
+            'Té Helado': 'te-helado.jpg',
+            'Agua de Jamaica': 'agua-de-jamaica.jpg',
+            'Batido de Fresa': 'batido-de-fresa.jpg',
+            'Piña Colada': 'pina-colada.jpg',
+            'Mojito': 'mojito.jpg',
+            'Cerveza': 'cerveza.jpg',
+
+        };
+
+        // Button to clear the cart
+        const clearCartButton = document.getElementById('limpiar-button');
+
+        clearCartButton.addEventListener('click', function () {
+            localStorage.removeItem('selectedProducts');
+            productList.innerHTML = '<p>No has agregado productos a tu carrito.</p>';
+            totalDisplay.innerHTML = 'Total a Pagar: $0.00'; // Reset total
         });
-        return total.toFixed(2); // Return total formatted to 2 decimal places
-    }
 
-    if (selectedProducts.length === 0) {
-        productList.innerHTML = '<p>No has agregado productos a tu carrito.</p>';
-    } else {
-        selectedProducts.forEach(product => {
-            const productItem = document.createElement('div');
-            productItem.classList.add('product-container');
-            productItem.innerHTML = `<h3>${product.name}</h3>
+        function calculateTotal() {
+            let total = 0;
+            selectedProducts.forEach(product => {
+                total += product.price * product.quantity; // Calculate total
+            });
+            return total.toFixed(2); // Return total formatted to 2 decimal places
+        }
+
+        if (selectedProducts.length === 0) {
+            productList.innerHTML = '<p>No has agregado productos a tu carrito.</p>';
+        } else {
+            selectedProducts.forEach(product => {
+                const productItem = document.createElement('div');
+                productItem.classList.add('product-container');
+                productItem.innerHTML = `<h3>${product.name}</h3>
                                      <img src="${productImages[product.name]}" alt="${product.name}" class="product-image" />
                                      <p>Precio: $${product.price.toFixed(2)}</p>
                                      <p>Cantidad: ${product.quantity}</p>`;
-            productList.appendChild(productItem);
-        });
-        totalDisplay.innerHTML = `Total a Pagar: $${calculateTotal()}`; // Display total
-    }
-</script>
+                productList.appendChild(productItem);
+            });
+            totalDisplay.innerHTML = `Total a Pagar: $${calculateTotal()}`; // Display total
+        }
+    </script>
 </body>
+
 </html>

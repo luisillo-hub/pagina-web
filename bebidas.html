@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebidas - Tienda</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="comprar_updated.js"></script>
+</head>
+
+<body onload="mostrarMenu()">
+
+    <header>
+        <div id="menuContainer">
+            <!-- <script>mostrarMenu()</script> -->
+        </div>
+    </header>
+    <main>
+        <img src="BEBIDAS.png" alt="promocion" height="300px" width="100%" />
+        <section class="productos">
+            <div class="product-container">
+                <a href="limonada.html">
+                    <img src="limonada.jpg" alt="Limonada" class="product-image" />
+                </a>
+                <h3>Limonada</h3>
+                <p>Precio Original: $3.33</p>
+                <p>Precio con descuento: $2.50</p>
+               
+                <button class="comprar-button" onclick="addToCart('Limonada', 2.50)">Comprar</button>
+             </div>
+            <div class="product-container">
+                <a href="margarita.html">
+                    <img src="margarita.jpg" alt="Margarita" class="product-image" />
+                </a>
+                <h3>Margarita</h3>
+                <p>Precio Original: $9.33</p>
+                <p>Precio con descuento: $7.00</p>
+              
+                <button class="comprar-button" onclick="addToCart('Margarita', 7.00)">Comprar</button>
+            </div>
+            <div class="product-container">
+                <a href="daiquiri.html">
+                    <img src="daiquiri.jpg" alt="Daiquiri" class="product-image" />
+                </a>
+                <h3>Daiquirí</h3>
+                <p>Precio Original: $8.67</p>
+                <p>Precio con descuento: $6.50</p>
+              
+                <button class="comprar-button" onclick="addToCart('Daiquiri', 6.50)">Comprar</button>
+            </div>
+            <div class="product-container">
+                <a href="te-helado.html">
+                    <img src="te-helado.jpg" alt="Té Helado" class="product-image" />
+                </a>
+                <h3>Té Helado</h3>
+                <p>Precio Original: $4.67</p>
+                <p>Precio con descuento: $3.50</p>
+                <button class="comprar-button" onclick="addToCart('Té Helado', 3.50)">Comprar</button>
+            </div>
+            <div class="product-container">
+                <a href="agua-de-jamaica.html">
+                    <img src="agua-de-jamaica.jpg" alt="Agua de Jamaica" class="product-image" />
+                </a>
+                <h3>Agua de Jamaica</h3>
+                <p>Precio Original: $4.00</p>
+                <p>Precio con descuento: $3.00</p>
+                <button class="comprar-button" onclick="addToCart('Agua de Jamaica', 3.00)">Comprar</button>
+            </div>
+            <div class="product-container">
+                <a href="batido-de-fresa.html">
+                    <img src="batido-de-fresa.jpg" alt="Batido de Fresa" class="product-image" />
+                </a>
+                <h3>Batido de Fresa</h3>
+                <p>Precio Original: $5.33</p>
+                <p>Precio con descuento: $4.00</p>
+                <button class="comprar-button" onclick="addToCart('Batido de Fresa', 4.00)">Comprar</button>
+            </div>
+            <div class="product-container">
+                <a href="cerveza.html">
+                    <img src="cerveza.jpg" alt="Cerveza" class="product-image" />
+                </a>
+                <h3>Cerveza</h3>
+                <p>Precio Original: $4.00</p>
+                <p>Precio con descuento: $3.00</p>
+              
+                <button class="comprar-button" onclick="addToCart('Cerveza', 3.00)">Comprar</button>
+            </div>
+            <div class="product-container">
+                <a href="pina-colada.html">
+                    <img src="pina-colada.jpg" alt="Piña Colada" class="product-image" />
+                </a>
+                <h3>Piña Colada</h3>
+                <p>Precio Original: $8.00</p>
+                <p>Precio con descuento: $6.00</p>
+                <button class="comprar-button" onclick="addToCart('Piña Colada', 6.00)">Comprar</button>
+
+            </div>
+            <div class="product-container">
+                <a href="mojito.html">
+                    <img src="mojito.jpg" alt="Mojito" class="product-image" />
+                </a>
+                <h3>Mojito</h3>
+                <p>Precio Original: $6.67</p>
+                <p>Precio con descuento: $5.00</p>
+                <button class="comprar-button" onclick="addToCart('Mojito', 5.00)">Comprar</button>
+
+            </div>
+            <div class="product-container">
+                <a href="vino-tinto.html">
+                    <img src="vino-tinto.jpg" alt="Vino Tinto" class="product-image" />
+                </a>
+                <h3>Vino Tinto</h3>
+                <p>Precio Original: $13.33</p>
+                <p>Precio con descuento: $10.00</p>
+                <button class="comprar-button" onclick="addToCart('Vino Tinto', 10.00)">Comprar</button>
+
+            </div>
+            <div class="product-container">
+                <a href="agua-mineral.html">
+                    <img src="agua-mineral.jpg" alt="Agua Mineral" class="product-image" />
+                </a>
+                <h3>Agua Mineral</h3>
+                <p>Precio Original: $2.00</p>
+                <p>Precio con descuento: $1.50</p>
+                <button class="comprar-button" onclick="addToCart('Agua Mineral', 1.50)">Comprar</button>
+
+            </div>
+            <div class="product-container">
+                <a href="refresco.html">
+                    <img src="refresco.webp" alt="Refresco" class="product-image" />
+                </a>
+                <h3>Refresco</h3>
+                <p>Precio Original: $3.33</p>
+                <p>Precio con descuento: $2.50</p>
+                <button class="comprar-button" onclick="addToCart('Refresco', 2.50)">Comprar</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Tienda de Bebidas. Todos los derechos reservados.</p>
+        <p>Contacto: info@tiendadebebidas.com</p>
+        <p>Teléfono: 123-456-7890</p>
+    </footer>
+</body>
+
+</html>

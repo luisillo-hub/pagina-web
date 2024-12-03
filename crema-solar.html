@@ -7,21 +7,15 @@
     <link rel="stylesheet" href="styles.css">
     <script src="comprar.js"></script>
 </head>
-<body>
-<header>
-    <nav>
-        <h1>Droguería</h1>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="drogueria.html">Droguería</a></li>
-            <li><a href="belleza.html">Belleza</a></li>
-            <li><a href="cuidado-personal.html">Cuidado Personal</a></li>
-            <li><a href="contactanos.html">Contáctanos</a></li>
-            <li><a href="carrito.html">Carrito</a></li>
-            <li><a href="registrarse.html">Registrarse</a></li>
-        </ul>
-    </nav>
-</header>
+<body onload="mostrarMenu()">
+    
+    <header>
+          
+            <div id="menuContainer">
+                <!-- <script>mostrarMenu()</script> -->
+                 
+            </div>
+    </header>
 <main>
 <section class="productos">
     <div class="productos">
@@ -29,43 +23,26 @@
         <div class="product-container">
             <h3>Crema Solar</h3>
             <p>La crema solar es un producto utilizado para proteger la piel de los daños causados por la radiación solar.</p>
-            <p>Precio: $15.00</p>
+            <p id="discounted-price"></p>
+            <p id="original-price">Precio con descuento: $15.00</p>
+            <script>
+                showDiscountedPrice()
+            </script>
             <label for="amount">Cantidad:</label>
             <input type="number" id="amount" name="amount" min="1" max="100" value="1"> <br>
             <button class="comprar-button" onclick="addToCart('Crema Solar', 15.00)">Comprar</button>
         </div>
-        <div class="producto">
-<p>Descubre nuestra crema solar de alta protección SPF 50, diseñada para ofrecerte una defensa eficaz contra los dañinos rayos UVA y UVB. Su fórmula ligera y de rápida absorción hidrata tu piel mientras la protege, dejándola suave y sin sensación grasa. Ideal para todo tipo de piel, incluyendo las más sensibles, esta crema es hipoalergénica y no comedogénica, lo que la hace perfecta para el uso diario.</p>
+        <div class="productos">
+            <p>Descubre nuestra crema solar de alta protección SPF 50, diseñada para ofrecerte una defensa eficaz contra los dañinos rayos UVA y UVB. Su fórmula ligera y de rápida absorción hidrata tu piel mientras la protege, dejándola suave y sin sensación grasa. Ideal para todo tipo de piel, incluyendo las más sensibles, esta crema es hipoalergénica y no comedogénica, lo que la hace perfecta para el uso diario.</p>
             <h2>Productos Similares</h2>
         </div>
-        <div class="product-container">
-            <a href="paracetamol.html">
-                <img src="paracetamol.png" alt="Paracetamol" class="product-image" />
-            </a>
-            <h3>Paracetamol</h3>
-            <p>Precio: $10.00</p>
-        </div>
-        <div class="product-container">
-            <a href="ibuprofeno.html">
-                <img src="ibuprofeno.jpg" alt="Ibuprofeno" class="product-image" />
-            </a>
-            <h3>Ibuprofeno</h3>
-            <p>Precio: $12.00</p>
-        </div>
-        <div class="product-container">
-            <a href="vaselina.html">
-                <img src="vaselina.jpg" alt="Vaselina" class="product-image" />
-            </a>
-            <h3>Vaselina</h3>
-            <p>Precio: $5.00</p>
-        </div>
-        <div class="product-container">
-            <a href="toallitas-humedas.html">
-                <img src="toallitas-humedas.jpg" alt="Toallitas Húmedas" class="product-image" />
-            </a>
-            <h3>Toallitas Húmedas</h3>
-            <p>Precio: $7.00</p>
-        </div>
+       
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                displayRandomSimilarProducts();
+            });
+        </script>
+    <div class="producto"></div>
     </div>
 </section>
 </main>

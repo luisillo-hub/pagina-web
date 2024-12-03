@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biberón - Droguería XYZ</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="comprar.js"></script>
+</head>
+
+<body onload="mostrarMenu()">
+    <header>
+        <div id="menuContainer">
+            <!-- <script>mostrarMenu()</script> -->
+        </div>
+    </header>
+    <main>
+        <section class="productos">
+            <div class="productos">
+                <img src="biberon.jpg" alt="Biberón" height="300px" />
+                <div class="product-container">
+                    <h3>Biberón</h3>
+                    <p>Biberón ergonómico, ideal para la alimentación de tu bebé.</p>
+                    <p id="discounted-price"></p>
+                    <p id="original-price">Precio con descuento: $8.00</p>
+                    <script>
+                        showDiscountedPrice()
+                    </script>
+                    <label for="amount">Cantidad:</label>
+                    <input type="number" id="amount" name="amount" min="1" max="100" value="1"> <br>
+                    <button class="comprar-button" onclick="addToCart('Biberón', 8.00)">Comprar</button>
+                </div>
+                <div class="productos">
+                    <p>Biberón diseñado para facilitar la alimentación y brindar comodidad a tu bebé. Ideal para el uso
+                        diario.
+                        Nuestro biberón anticólicos está diseñado para proporcionar una alimentación cómoda y sin
+                        molestias a tu bebé. Su tetina de silicona suave imita la forma del pecho materno, reduciendo la
+                        ingesta de aire y los cólicos.
+
+                        <br> Material: Vidrio de borosilicato y silicona de grado médico
+                        <br> Edad recomendada: 0+ meses
+                        <br> Características: Tetina anticólicos, forma ergonómica, fácil de limpiar
+                    </p>
+                    <br>
+                    <h2>Productos Similares</h2>
+                </div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        displayRandomSimilarProducts();
+                    });
+                </script>
+                <div class="producto"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Droguería XYZ. Todos los derechos reservados.</p>
+        <p>Contacto: info@farmacia.com</p>
+        <p>Teléfono: 123-456-7890</p>
+    </footer>
+</body>
+
+</html>

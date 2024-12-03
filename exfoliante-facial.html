@@ -7,21 +7,14 @@
     <link rel="stylesheet" href="styles.css">
     <script src="comprar.js"></script>
 </head>
-<body>
-<header>
-    <nav>
-        <h1>Productos de Belleza</h1>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="drogueria.html">Droguería</a></li>
-            <li><a href="belleza.html">Belleza</a></li>
-            <li><a href="cuidado-personal.html">Cuidado Personal</a></li>
-            <li><a href="contactanos.html">Contáctanos</a></li>
-            <li><a href="carrito.html">Carrito</a></li>
-            <li><a href="registrarse.html">Registrarse</a></li>
-        </ul>
-    </nav>
-</header>
+<body onload="mostrarMenu()">
+    <header>
+            
+            <div id="menuContainer">
+                <!-- <script>mostrarMenu()</script> -->
+                 
+            </div>
+    </header>
 <main>
 <section class="productos">
     <div class="productos">
@@ -29,43 +22,26 @@
         <div class="product-container">
             <h3>Exfoliante Facial</h3>
             <p>Exfoliante facial para una limpieza profunda. </p>
-            <p>Precio: $22.00</p>
+            <p id="discounted-price"></p>
+            <p id="original-price">Precio con descuento: $22.00</p>
+            <script>
+                showDiscountedPrice()
+            </script>
             <label for="amount">Cantidad:</label>
             <input type="number" id="amount" name="amount" min="1" max="100" value="1"> <br>
             <button class="comprar-button" onclick="addToCart('Exfoliante Facial', 22.00)">Comprar</button>
         </div>
-        <div class="producto">
+        <div class="productos">
             <p>Exfoliante facial para una limpieza profunda. Este producto ayuda a eliminar las células muertas de la piel, mejorando su textura y luminosidad. Aplícalo sobre la piel húmeda, masajeando suavemente en movimientos circulares, y enjuaga con agua tibia. Es adecuado para todo tipo de piel, pero se recomienda no usarlo más de dos veces por semana para evitar irritaciones.</p>
             <h2>Productos Similares</h2>
         </div>
-        <div class="product-container">
-        <a href="crema-hidratante.html">
-            <img src="crema-hidratante.jpg" alt="Crema Hidratante" class="product-image" />
-        </a>
-        <h3>Crema Hidratante</h3>
-        <p>Precio: $20.00</p>
-    </div>
-    <div class="product-container">
-        <a href="serum-facial.html">
-            <img src="serum-facial.png" alt="Serum Facial" class="product-image" />
-        </a>
-        <h3>Serum Facial</h3>
-        <p>Precio: $25.00</p>
-    </div>
-    <div class="product-container">
-        <a href="jabon-exfoliante.html">
-            <img src="jabon-exfoliante.webp" alt="Jabón Exfoliante" class="product-image" />
-        </a>
-        <h3>Jabón Exfoliante</h3>
-        <p>Precio: $15.00</p>
-    </div>
-        <div class="product-container">
-            <a href="desodorante.html">
-                <img src="desodorante.jpg" alt="Desodorante" class="product-image" />
-            </a>
-            <h3>Desodorante</h3>
-            <p>Precio: $8.00</p>
-        </div>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                displayRandomSimilarProducts();
+            });
+        </script>
+    <div class="producto"></div>
     </div>
 </section>
 <footer>

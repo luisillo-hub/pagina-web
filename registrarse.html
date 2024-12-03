@@ -5,22 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarse</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="comprar.js"></script>
 </head>
-<body>
-<header>
-    <nav>
-        <h1>Registrarse</h1>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="drogueria.html">Droguería</a></li>
-            <li><a href="belleza.html">Belleza</a></li>
-            <li><a href="cuidado-personal.html">Cuidado Personal</a></li>
-            <li><a href="contactanos.html">Contáctanos</a></li>
-            <li><a href="carrito.html">Carrito</a></li>
-            <li><a href="registrarse.html">Registrarse</a></li>
-        </ul>
-    </nav>
-</header>
+<body onload="mostrarMenu()">
+    <header>
+       
+        <div id="menuContainer">
+            <!-- <script>mostrarMenu()</script> -->
+        </div>
+    </header>
 <main>
     <section class="registro">
         <h2>Formulario de Registro</h2>
@@ -91,7 +84,7 @@ function guardarDatos(event) {
 
     // Optionally, you can redirect or show a success message
     alert('Registro exitoso!');
- 
+    window.location.href = 'registros.html'; // Redirect to registros.html
 }
 </script>
 </body>

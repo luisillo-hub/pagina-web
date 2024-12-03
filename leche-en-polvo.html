@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leche en Polvo - Droguería XYZ</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="comprar.js"></script>
+</head>
+<body onload="mostrarMenu()">
+    <header>
+    
+        <div id="menuContainer">
+            <!-- <script>mostrarMenu()</script> -->
+        </div>
+    </header>
+    <main>
+        <section class="productos">
+            <div class="productos">
+                <img src="leche-en-polvo.jpg" alt="Leche en Polvo" height="300px" />
+                <div class="product-container">
+                    <h3>Leche en Polvo</h3>
+                    <p>Leche en polvo nutritiva para el crecimiento saludable de tu bebé.</p>
+                    <p id="discounted-price"></p>
+                    <p id="original-price">Precio con descuento: $15.00</p>
+                    <script>
+                        showDiscountedPrice()
+                    </script>
+                    <label for="amount">Cantidad:</label>
+                    <input type="number" id="amount" name="amount" min="1" max="100" value="1"> <br>
+                    <button class="comprar-button" onclick="addToCart('Leche en Polvo', 15.00)">Comprar</button>
+                </div>
+                <div class="productos">
+                    <p>Leche en polvo nutritiva, ideal para el crecimiento y desarrollo de tu bebé. Perfecta para complementar su alimentación diaria.
+                        Preparación de bebidas: Prepara leche líquida, batidos, cócteles y otras bebidas.
+                        Cocción: Úsala en la elaboración de panadería, repostería, salsas y otros platos.
+                        Suplemento nutricional: Ideal para personas con necesidades nutricionales especiales, como niños, adultos mayores y deportistas.</p>
+                    <br>
+                    <h2>Productos Similares</h2>
+                </div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        displayRandomSimilarProducts();
+                    });
+                </script>
+                <div class="producto"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Droguería XYZ. Todos los derechos reservados.</p>
+        <p>Contacto: info@farmacia.com</p>
+        <p>Teléfono: 123-456-7890</p>
+    </footer>
+</body>
+</html>

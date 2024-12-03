@@ -7,21 +7,15 @@
     <link rel="stylesheet" href="styles.css">
     <script src="comprar.js"></script>
 </head>
-<body>
-<header>
-    <nav>
-        <h1>Cuidado Personal</h1>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="drogueria.html">Droguería</a></li>
-            <li><a href="belleza.html">Belleza</a></li>
-            <li><a href="cuidado-personal.html">Cuidado Personal</a></li>
-            <li><a href="contactanos.html">Contáctanos</a></li>
-            <li><a href="carrito.html">Carrito</a></li>
-            <li><a href="registrarse.html">Registrarse</a></li>
-        </ul>
-    </nav>
-</header>
+<body onload="mostrarMenu()">
+    
+    <header>
+          
+            <div id="menuContainer">
+                <!-- <script>mostrarMenu()</script> -->
+                 
+            </div>
+    </header>
 <main>
 <section class="productos">
     <div class="productos">
@@ -30,12 +24,16 @@
         <div class="product-container">
             <h3>Gel Antibacterial</h3>
         <p>Gel antibacterial para una limpieza efectiva de manos. </p>
-        <p>Precio: $12.00</p>
+        <p id="discounted-price"></p>
+        <p id="original-price">Precio con descuento: $12.00</p>
+        <script>
+            showDiscountedPrice()
+        </script>
         <label for="amount">Cantidad:</label>
         <input type="number" id="amount" name="amount" min="1" max="100" value="1"> <br> 
         <button class="comprar-button" onclick="addToCart('Gel Antibacterial', 12.00)">Comprar</button>  
     </div>
-    <div class="producto">
+    <div class="productos">
 <p>Descubre nuestro gel antibacterial, ideal para mantener tus manos limpias y protegidas. Con una fórmula que elimina el 99.9% de bacterias y virus, este gel contiene un 70% de alcohol y glicerina para cuidar tu piel. Su rápida absorción y agradable aroma lo hacen perfecto para usar en cualquier momento y lugar.Ideal para usar en casa, en la oficina o mientras viajas.
     Contribuye a la prevención de enfermedades al mantener una buena higiene de manos.
     Producto libre de parabenos y sulfatos, apto para todo tipo de piel.
@@ -43,34 +41,14 @@
     Características del Gel Antibacte</p>
         <h2>Productos Similares</h2>
     </div>
-    <div class="product-container">
-        <a href="cuchillas.html">
-            <img src="cuchillas.jpg" alt="Cuchillas de Afeitar" class="product-image" />
-        </a>
-        <h3>Cuchillas de Afeitar</h3>
-        <p>Precio: $8.00</p>
-    </div>
-    <div class="product-container">
-        <a href="crema-para-peinar.html">
-            <img src="crema-para-peinar.jpg" alt="Crema para Peinar" class="product-image" />
-        </a>
-        <h3>Crema para Peinar</h3>
-        <p>Precio: $5.00</p>
-    </div>
-    <div class="product-container">
-        <a href="shampoo.html">
-            <img src="shampoo.jpg" alt="Shampoo" class="product-image" />
-        </a>
-        <h3>Shampoo</h3>
-        <p>Precio: $10.00</p>
-    </div>
-    <div class="product-container">
-        <a href="acondicionador.html">
-            <img src="acondicionador.jpg" alt="Acondicionador" class="product-image" />
-        </a>
-        <h3>Acondicionador</h3>
-        <p>Precio: $6.00</p>
-    </div> </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            displayRandomSimilarProducts();
+        });
+    </script>
+<div class="producto"></div>
+</div>
 </section>
 </main>
 <footer>

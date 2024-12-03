@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,76 +8,60 @@
     <link rel="stylesheet" href="styles.css">
     <script src="comprar.js"></script>
 </head>
-<body>
-<header>
-    <nav>
-        <h1>Productos de Belleza</h1>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="drogueria.html">Droguería</a></li>
-            <li><a href="belleza.html">Belleza</a></li>
-            <li><a href="cuidado-personal.html">Cuidado Personal</a></li>
-            <li><a href="contactanos.html">Contáctanos</a></li>
-            <li><a href="carrito.html">Carrito</a></li>
-            <li><a href="registrarse.html">Registrarse</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-<section class="productos">
-    <div class="productos">
-        <img src="crema-hidratante.jpg" alt="Crema Hidratante" height="300px" />
-        <div class="product-container">
-            <h3>Crema Hidratante</h3>
-            <p>Crema hidratante para mantener la piel suave y humectada. Esta crema es ideal para todo tipo de piel y ayuda a prevenir la sequedad.</p>
-            <p>Precio: $20.00</p>
-            <label for="amount">Cantidad:</label>
-            <input type="number" id="amount" name="amount" min="1" max="100" value="1"> <br>
-            <button class="comprar-button" onclick="addToCart('Crema Hidratante', 20.00)">Comprar</button>
-        </div>
-        <div class="producto">
-<p>Descubre nuestra Crema Hidratante, diseñada para proporcionar a tu piel la hidratación y el cuidado que necesita. Formulada con ingredientes de alta calidad, esta crema es ideal para todo tipo de piel, ayudando a mantenerla suave, flexible y radiante.
-    <br>Hidratación Intensiva: Enriquecida con ingredientes humectantes como glicerina, ácido hialurónico y aceites naturales, nuestra crema penetra profundamente en la piel, proporcionando una hidratación duradera.
 
-    Textura Ligera y No Grasa: Se absorbe rápidamente, dejando la piel suave y sin sensación pegajosa, lo que la hace perfecta para usar tanto de día como de noche.
-</p>
-            <h2>Productos Similares</h2>
-        </div>
-        <div class="product-container">
-            <a href="serum-facial.html">
-                <img src="serum-facial.png" alt="Serum Facial" class="product-image" />
-            </a>
-            <h3>Serum Facial</h3>
-            <p>Precio: $25.00</p>
-        </div>
-        <div class="product-container">
-            <a href="jabon-exfoliante.html">
-                <img src="jabon-exfoliante.webp" alt="Jabón Exfoliante" class="product-image" />
-            </a>
-            <h3>Jabón Exfoliante</h3>
-            <p>Precio: $15.00</p>
-        </div>
-        <div class="product-container">
-            <a href="mascarilla-hidratante.html">
-                <img src="mascarilla-hidratante.webp" alt="Mascarilla Hidratante" class="product-image" />
-            </a>
-            <h3>Mascarilla Hidratante</h3>
-            <p>Precio: $18.00</p>
-        </div>
-        <div class="product-container">
-            <a href="desodorante.html">
-                <img src="desodorante.jpg" alt="Desodorante" class="product-image" />
-            </a>
-            <h3>Desodorante</h3>
-            <p>Precio: $8.00</p>
-        </div>
-    </div>
-</section>
-</main>
-<footer>
-    <p>&copy; 2024 Droguería XYZ. Todos los derechos reservados.</p>
-    <p>Contacto: info@farmacia.com</p>
-    <p>Teléfono: 123-456-7890</p>
-</footer>
+<body onload="mostrarMenu()">
+    <header>
+         
+            <div id="menuContainer">
+                <!-- <script>mostrarMenu()</script> -->
+                 
+            </div>
+    </header>
+    <main>
+        <section class="productos">
+            <div class="productos">
+                <img src="crema-hidratante.jpg" alt="Crema Hidratante" height="300px" />
+                <div class="product-container">
+                    <h3>Crema Hidratante</h3>
+                    <p>Crema hidratante para mantener la piel suave y humectada. Esta crema es ideal para todo tipo de
+                        piel y ayuda a prevenir la sequedad.</p>
+                        <p id="discounted-price"></p>
+                        <p id="original-price">Precio con descuento: $20.00</p>
+                        <script>
+                            showDiscountedPrice()
+                        </script>
+                    <label for="amount">Cantidad:</label>
+                    <input type="number" id="amount" name="amount" min="1" max="100" value="1"> <br>
+                    <button class="comprar-button" onclick="addToCart('Crema Hidratante', 20.00)">Comprar</button>
+                </div>
+                <div class="productos">
+                    <p>Descubre nuestra Crema Hidratante, diseñada para proporcionar a tu piel la hidratación y el
+                        cuidado que necesita. Formulada con ingredientes de alta calidad, esta crema es ideal para todo
+                        tipo de piel, ayudando a mantenerla suave, flexible y radiante.
+                        <br>Hidratación Intensiva: Enriquecida con ingredientes humectantes como glicerina, ácido
+                        hialurónico y aceites naturales, nuestra crema penetra profundamente en la piel, proporcionando
+                        una hidratación duradera.
+
+                        Textura Ligera y No Grasa: Se absorbe rápidamente, dejando la piel suave y sin sensación
+                        pegajosa, lo que la hace perfecta para usar tanto de día como de noche.
+                    </p>
+                    <h2>Productos Similares</h2>
+                </div>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        displayRandomSimilarProducts();
+                    });
+                </script>
+                <div class="producto"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Droguería XYZ. Todos los derechos reservados.</p>
+        <p>Contacto: info@farmacia.com</p>
+        <p>Teléfono: 123-456-7890</p>
+    </footer>
 </body>
+
 </html>
