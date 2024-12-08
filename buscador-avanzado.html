@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador Avanzado</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        select {
+  position: relative;
+  font-family: Arial;
+  font-size: large;
+  padding: 10px;
+}
+button {
+    font-size: 1.0em; /* Increase font size */
+    background-color: #35dc6d; /* Red background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 20px 25px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background 0.3s ease; /* Transition for hover effect */
+}
+button:hover {
+    background-color: #26964b; /* Darker red on hover */
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <img src="logo.png" alt="promocion" height="40px" />
+                <a href="index.html">Inicio</a>
+                <a href="buscador.html">Buscar</a>
+                <a href="drogueria.html">Droguería</a>
+                <a href="belleza.html">Belleza</a>
+                <a href="bebes.html">Bebé y Mamá</a>
+                <a href="cuidado-personal.html">Cuidado Personal</a>
+                <a href="bebidas.html">Bebidas</a>
+                <a href="contactanos.html">Contáctanos</a>
+                <a href="carrito.html">Carrito</a>
+                <a href="registrarse.html">Registrarse</a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Buscador Avanzado de Síntomas</h1>
+  
+    
+        <form id="sintomas-form">
+            <fieldset>
+                <legend>¿Cuáles son tus síntomas?</legend>
+                <select id="sintoma1" name="sintoma1" required>
+                    <option value="">Selecciona un síntoma</option>
+                    <option value="Dolor de cabeza">Dolor de cabeza</option>
+                    <option value="Fiebre">Fiebre</option>
+                    <option value="Dolor de garganta">Dolor de garganta</option>
+                    <option value="Dolor muscular">Dolor muscular</option>
+                    <option value="Náuseas">Náuseas</option>
+                    <option value="Piel reseca">Piel reseca</option>
+                    <option value="Vómitos">Vómitos</option>
+                    <option value="Diarrea">Diarrea</option>
+                    <option value="Fatiga">Fatiga</option>
+                    <option value="Tos">Tos</option>
+                    <option value="Congestión nasal">Congestión nasal</option>
+                </select>
+                <button type="submit">Enviar</button>
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <div class="container">
+            <h4>Contacto</h4>
+            <p>
+                <strong>Droguería La Mano de Dios</strong><br>
+                Calle 123 #45-67<br>
+                Santa Marta, Colombia<br>
+                Teléfono: (123) 456-7890<br>
+                Email: contacto@droguerialamanodedios.com
+            </p>
+            
+            <h4>Síguenos en nuestras redes sociales</h4>
+            <a href="https://www.facebook.com/droguerialamanodedios" target="_blank">
+                <img src="facebook-icon.jpg" alt="Facebook" style="width: 50px; margin: 0 10px;">
+            </a>
+            <a href="https://www.instagram.com/droguerialamanodedios" target="_blank">
+                <img src="instagram-icon.png" alt="Instagram" style="width: 50px; margin: 0 10px;">
+            </a>
+            <a href="https://www.twitter.com/droguerialamanodedios" target="_blank">
+                <img src="twitter-logo.png" alt="Twitter" style="width: 80px;">
+            </a>
+            
+            <p style="margin-top: 20px;">
+                &copy; 2024 Droguería La Mano de Dios. Todos los derechos reservados.
+            </p>
+        </div>
+
+    </footer>
+    <script>
+        document.getElementById('sintomas-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const selectedSymptom = document.getElementById('sintoma1').value;
+
+            const symptomToProductMap = {
+                'Dolor de cabeza': 'paracetamol',
+                'Fiebre': 'ibuprofeno',
+                'Dolor muscular': 'relajante-muscular',
+                'Piel reseca': 'vaselina',
+                'Náuseas': 'antiemeticos',
+                'Diarrea': 'loperamida',
+                'Fatiga': 'monster',
+                'Tos': 'antitusigenos',
+                'Congestión nasal': 'descongestionante'
+            };
+
+            const productPage = symptomToProductMap[selectedSymptom];
+            if (productPage) {
+                window.location.href = `${productPage}.html`;
+            } else {
+                alert('No se encontró un producto correspondiente al síntoma seleccionado.');
+            }
+        });
+    </script>
+</body>
+</html>

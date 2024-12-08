@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos de Bebé - Tienda</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="comprar.js"></script>
+    <script src="comprar_updated.js"></script>
 </head>
 
-<body onload="mostrarMenu()">
+<body onload="mostrarMenu(), mostrarFooter()">
 
     <header>
 
@@ -27,6 +27,8 @@
                 <h3>Pañales</h3>
                 <p>Precio Original: $13.33</p>
                 <p>Precio con descuento: $10.00</p>
+                <button class="comprar-button" onclick="addToCart('Pañales', 10.00)">Comprar</button>
+
             </div>
             <div class="product-container">
                 <a href="leche-en-polvo.html">
@@ -35,6 +37,8 @@
                 <h3>Leche en Polvo</h3>
                 <p>Precio Original: $20.00</p>
                 <p>Precio con descuento: $15.00</p>
+                <button class="comprar-button" onclick="addToCart('Leche en Polvo', 15.00)">Comprar</button>
+
             </div>
             <div class="product-container">
                 <a href="toallitas-humedas.html">
@@ -43,6 +47,8 @@
                 <h3>Toallitas Húmedas</h3>
                 <p>Precio Original: $4.00</p>
                 <p>Precio con descuento: $3.00</p>
+                <button class="comprar-button" onclick="addToCart('Toallitas Húmedas', 3.00)">Comprar</button>
+
             </div>
             <div class="product-container">
                 <a href="chupete.html">
@@ -51,6 +57,8 @@
                 <h3>Chupete</h3>
                 <p>Precio Original: $6.67</p>
                 <p>Precio con descuento: $5.00</p>
+                <button class="comprar-button" onclick="addToCart('Chupete', 5.00)">Comprar</button>
+
             </div>
             <div class="product-container">
                 <a href="biberon.html">
@@ -59,13 +67,16 @@
                 <h3>Biberón</h3>
                 <p>Precio Original: $10.67</p>
                 <p>Precio con descuento: $8.00</p>
+                <button class="comprar-button" onclick="addToCart('Biberón', 8.00)">Comprar</button>
+
             </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Tienda de Productos de Bebé. Todos los derechos reservados.</p>
-        <p>Contacto: info@tiendadebebes.com</p>
-        <p>Teléfono: 123-456-7890</p>
+        <div id="footerContainer">
+            <!-- <script>mostrarMenu()</script> -->
+        </div>
+   
     </footer>
 </body>
 

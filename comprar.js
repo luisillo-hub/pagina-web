@@ -1,3 +1,4 @@
+
 function addToCart(productName, productPrice) {
     const quantity = document.getElementById('amount').value;
     const selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
@@ -59,6 +60,11 @@ function displayRandomSimilarProducts() {
         { name: 'Agua de Jamaica', image: 'agua-de-jamaica.jpg', link: 'agua-de-jamaica.html', price: '$3.00' },
         { name: 'Batido de Fresa', image: 'batido-de-fresa.jpg', link: 'batido-de-fresa.html', price: '$5.50' },
         { name: 'Piña Colada', image: 'pina-colada.jpg', link: 'pina-colada.html', price: '$8.00' },
+        { name: 'Antieméticos', image: 'antiemeticos.jpg', link: 'antiemeticos.html', price: '$8.00' },
+        { name: 'Loperamida', image: 'loperamida.jpg', link: 'loperamida.html', price: '$4.00' },
+        { name: 'Monster', image: 'monster.jpg', link: 'monster.html', price: '$12.00' },
+        { name: 'Antitusigenos', image: 'antitusigenos.jpg', link: 'antitusigenos.html', price: '$12.00' },
+        { name: 'Descongestionante', image: 'descongestionante.jpg', link: 'descongestionante.html', price: '$8.00' },
         { name: 'Mojito', image: 'mojito.jpg', link: 'mojito.html', price: '$6.50' }  ];
 
     // Shuffle the products array
@@ -106,4 +112,37 @@ function mostrarMenu() {
         </nav>
     `;
     document.getElementById('menuContainer').innerHTML = menuHTML;
+}
+function mostrarFooter() {
+    const footerHTML = `
+       <footer>
+    <div class="container">
+        <h4>Contacto</h4>
+        <p>
+            <strong>Droguería La Mano de Dios</strong><br>
+            Calle 123 #45-67<br>
+            Santa Marta, Colombia<br>
+            Teléfono: (123) 456-7890<br>
+            Email: contacto@droguerialamanodedios.com
+        </p>
+        
+        <h4>Síguenos en nuestras redes sociales</h4>
+        <a href="https://www.facebook.com/droguerialamanodedios" target="_blank">
+            <img src="facebook-icon.jpg" alt="Facebook" style="width: 50px; margin: 0 10px;">
+        </a>
+        <a href="https://www.instagram.com/droguerialamanodedios" target="_blank">
+            <img src="instagram-icon.png" alt="Instagram" style="width: 50px; margin: 0 10px;">
+        </a>
+        <a href="https://www.twitter.com/droguerialamanodedios" target="_blank">
+            <img src="twitter-logo.png" alt="Twitter" style="width: 80px;">
+        </a>
+        
+        <p style="margin-top: 20px;">
+            &copy; 2024 Droguería La Mano de Dios. Todos los derechos reservados.
+        </p>
+    </div>
+</footer>
+        
+    `;
+    document.getElementById('footerContainer').innerHTML = footerHTML;
 }

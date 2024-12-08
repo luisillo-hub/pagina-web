@@ -15,7 +15,8 @@
         </div>
     </header>
 <main>
-    <section class="registro">
+    <div style="display: flex;">
+    <div class="registro">
         <h2>Formulario de Registro</h2>
         <form id="registrationForm" onsubmit="guardarDatos(event)">
             <label for="nombre">Nombre:</label>
@@ -36,10 +37,12 @@
             <label for="confirm-password">Confirmar Contraseña:</label>
             <input type="password" id="confirm-password" name="confirm-password" required>
 <br>
-            <button type="submit">Registrarse</button>
-            <button onclick="window.location.href='registros.html'">Ir a Registros</button>
+            <button id="comprar-button" onclick="window.location.href='registrarse.html'" type="submit">Registrarse</button>
+            <button id="limpiar-button" onclick="window.location.href='registro-completo.html'">Ir a Registros</button>
         </form>
-    </section>
+    </div>
+    <div style="padding: 50px;"><img src="registrarse.jpg" height="500px" width="700px"></div>
+</div>
 </main>
 <footer>
     <p>&copy; 2024 Droguería XYZ. Todos los derechos reservados.</p>
@@ -66,6 +69,7 @@ function guardarDatos(event) {
 
     // Retrieve existing user data from local storage
     const existingUsers = JSON.parse(localStorage.getItem('userData')) || [];
+    const oneUser = JSON.parse(localStorage.getItem('oneuserData')) || [];
 
     // Create a new user object
     const newUser = {
@@ -77,14 +81,15 @@ function guardarDatos(event) {
     };
 
     // Add the new user to the existing users array
+    oneUser.push(newUser);
     existingUsers.push(newUser);
 
     // Save the updated users array back to local storage
     localStorage.setItem('userData', JSON.stringify(existingUsers));
-
+    localStorage.setItem('oneuserData', JSON.stringify(oneUser));
     // Optionally, you can redirect or show a success message
     alert('Registro exitoso!');
-    window.location.href = 'registros.html'; // Redirect to registros.html
+    
 }
 </script>
 </body>

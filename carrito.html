@@ -9,7 +9,7 @@
     <script src="comprar.js"></script>
 </head>
 
-<body onload="mostrarMenu()">
+<body onload="mostrarMenu(), mostrarFooter()">
     <header>
 
         <div id="menuContainer">
@@ -23,12 +23,14 @@
 
             <h2 id="total">Total a Pagar: $0.00</h2> <!-- Total display -->
             <button id="limpiar-button">Limpiar Carrito</button>
+            <button id="comprar-button" onclick="window.location.href='registrarse.html'">Comprar</button>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Droguería XYZ. Todos los derechos reservados.</p>
-        <p>Contacto: info@farmacia.com</p>
-        <p>Teléfono: 123-456-7890</p>
+        <div id="footerContainer">
+            <!-- <script>mostrarMenu()</script> -->
+        </div>
+
     </footer>
     <script>
         const productList = document.getElementById('product-list');
@@ -74,8 +76,11 @@
             'Piña Colada': 'pina-colada.jpg',
             'Mojito': 'mojito.jpg',
             'Cerveza': 'cerveza.jpg',
-
-        };
+            'Antieméticos':'antiemeticos.jpg', 
+            'Loperamida':'loperamida.jpg',
+            'Monster': 'monster.jpg',
+            'Antitusigenos': 'antitusigenos.jpg', 
+            'Descongestionante': 'descongestionante.jpg' };
 
         // Button to clear the cart
         const clearCartButton = document.getElementById('limpiar-button');

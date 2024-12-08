@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros - Droguería XYZ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <img src="logo.png" alt="promocion" height="40px" />
+            <a href="index.html">Inicio</a>
+            <a href="buscador.html">Buscar</a>
+            <a href="drogueria.html">Droguería</a>
+            <a href="belleza.html">Belleza</a>
+            <a href="bebes.html">Bebé y Mamá</a>
+            <a href="cuidado-personal.html">Cuidado Personal</a>
+            <a href="bebidas.html">Bebidas</a>
+            <a href="contactanos.html">Contáctanos</a>
+            <a href="carrito.html">Carrito</a>
+            <a href="registrarse.html">Registrarse</a>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h2>Usuarios Registrados</h2>
+   
+    <button id="limpiar-button" onclick="borrarRegistros()">Borrar Registros</button>
+    <ul id="userList"></ul>
+<script>
+    function displayUsers() {
+        const usersData = JSON.parse(localStorage.getItem('oneuserData')) || [];
+        console.log('Users Data:', usersData); // Log the usersData to the console
+        
+        const userList = document.getElementById('userList');
+        userList.innerHTML = '';
+        if (usersData.length > 0) {
+            usersData.forEach(user => {
+                const userDiv = document.createElement('div');
+                userDiv.className = 'user-info';
+                userDiv.innerHTML = `
+                    <p><strong>Nombre:</strong> ${user.nombre}</p>
+                    <p><strong>Email:</strong> ${user.email}</p>
+                    <p><strong>Teléfono:</strong> ${user.telefono}</p>
+                    <p><strong>Dirección:</strong> ${user.direccion}</p>
+                    <p><strong>Contraseña:</strong> ${user.password}</p>
+                `;
+                userList.appendChild(userDiv);
+            });
+        } 
+    }
+    
+    function borrarRegistros() {
+        localStorage.removeItem('oneuserData'); // Clear user data from local storage
+        displayUsers(); // Refresh the user list to show no records
+    }
+    
+    window.onload = displayUsers;
+</script>
+
+</main>
+<footer>
+    <p>&copy; 2024 Droguería XYZ. Todos los derechos reservados.</p>
+    <p>Contacto: info@farmacia.com</p>
+    <p>Teléfono: 123-456-7890</p>
+</footer>
+</body>
+</html>
